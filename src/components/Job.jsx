@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux"; // Aggiungi questi
+import { useSelector, useDispatch } from "react-redux";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
