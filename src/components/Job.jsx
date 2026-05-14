@@ -1,10 +1,14 @@
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import {
+  ADD_TO_FAVOURITE,
+  REMOVE_FROM_FAVOURITE,
+} from "../redux/actions/index";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
-  const favourites = useSelector((state) => state.favourites.list);
+  const favourites = useSelector((state) => state.favourite.list);
   const isFav = favourites.some((fav) => fav._id === data._id);
 
   return (
@@ -35,12 +39,12 @@ const Job = ({ data }) => {
           onClick={() => {
             if (isFav) {
               dispatch({
-                type: "REMOVE_FROM_FAVOURITE",
-                payload: data,
+                type: REMOVE_FROM_FAVOURITE,
+                payload: data._id,
               });
             } else {
               dispatch({
-                type: "ADD_TO_FAVOURITE",
+                type: ADD_TO_FAVOURITE,
                 payload: data,
               });
             }

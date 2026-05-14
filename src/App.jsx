@@ -4,7 +4,7 @@ import MainSearch from "./components/MainSearch";
 import CompanySearchResults from "./components/CompanySearchResults";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./redux/reducers/store";
+import store from "./redux/store";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Favourites from "./components/Favourites";
 function App() {
